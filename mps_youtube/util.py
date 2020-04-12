@@ -18,7 +18,8 @@ from . import g, c, terminalsize, description_parser
 from .playlist import Video
 
 from importlib import import_module
-
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 macos = platform.system() == "Darwin"
 
 mswin = os.name == "nt"

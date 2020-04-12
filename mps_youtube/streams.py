@@ -3,7 +3,8 @@ import threading
 from urllib.request import urlopen
 
 from . import g, c, screen, config, util
-
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 
 def prune():
     """ Keep cache size in check. """

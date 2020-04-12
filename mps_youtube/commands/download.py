@@ -12,7 +12,8 @@ from .. import g, c, screen, streams, content, config, util
 from . import command, PL
 from .search import yt_url, user_pls
 from .songlist import dump, plist
-
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 
 @command(r'(dv|da|d|dl|download)\s*(\d{1,4})', 'da', 'dv', 'd', 'dl', 'download')
 def download(dltype, num):

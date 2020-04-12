@@ -7,7 +7,8 @@ import json
 from urllib.request import urlopen
 from urllib.error import HTTPError
 from urllib.parse import urlencode
-
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 try:
     import pylast
     has_pylast = True

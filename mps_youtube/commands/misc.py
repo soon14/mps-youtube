@@ -5,7 +5,8 @@ import traceback
 from urllib.request import urlopen
 from urllib.error import HTTPError, URLError
 from .. import player
-
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 try:
     # pylint: disable=F0401
     import pyperclip
