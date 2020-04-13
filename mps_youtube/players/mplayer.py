@@ -15,7 +15,7 @@ not_utf8_environment = mswin or "UTF-8" not in sys.stdout.encoding
 class mplayer(CmdPlayer):
     def __init__(self, player):
         self.player = player
-        self.mplayer_version = _get_mplayer_version(player)
+        self.mplayer_version ="1.0" # _get_mplayer_version(player)
 
     def _generate_real_playerargs(self):
         """ Generate args for player command.
