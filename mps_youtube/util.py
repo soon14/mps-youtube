@@ -219,13 +219,13 @@ def get_pafy(item, force=False, callback=None):
     else:
 
         try:
-            p = pafy.new(ytid, callback=callback_fn)
+            p = pafy.new(ytid, callback=callback_fn, ydl_opts={'nocheckcertificate': True})
 
         except IOError as e:
 
             if "pafy" in str(e):
                 dbg(c.p + "retrying failed pafy get: " + ytid + c.w)
-                p = pafy.new(ytid, callback=callback)
+                p = pafy.new(ytid, callback=callback, ydl_opts={'nocheckcertificate': True})
 
             else:
                 raise
